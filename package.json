@@ -14,7 +14,8 @@
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
-    "test:swc": "yarn jest --config jest.config.swc.js"
+    "test:swc": "yarn jest --config jest.config.swc.js",
+    "test:ts-jest": "yarn jest --config jest.config.ts-jest.js"
   },
   "dependencies": {
     "@nestjs/common": "^8.1.1",
