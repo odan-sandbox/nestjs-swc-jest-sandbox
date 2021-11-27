@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: yarn install
+        run: |
+          yarn install --frozen-lockfile --verbose
+
+      - name: run jest
+        run: |
+          time yarn test
+          time yarn test
+          time yarn test
+
+      - name: run jest with swc
+        run: |
+          time yarn test:swc
+          time yarn test:swc
+          time yarn test:swc
