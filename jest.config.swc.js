@@ -7,6 +7,8 @@ const config = JSON.parse(fs.readFileSync(`${__dirname}/.swcrc`, 'utf-8'));
 
 module.exports = {
   ...config,
+  rootDir: 'src',
+  testRegex: '.*\\.spec\\.ts$',
   transform: {
     '^.+\\.(t|j)s$': ['@swc/jest', { ...config }],
   },

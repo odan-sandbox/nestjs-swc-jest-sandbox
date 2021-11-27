@@ -23,6 +23,18 @@ jobs:
         run: |
           yarn install --frozen-lockfile --verbose
 
+      - name: Run build
+        run: |
+          yarn build
+
+      - name: Run jest
+        run: |
+          time yarn test
+          time yarn test
+          time yarn test
+          time yarn test
+          time yarn test
+
       - name: Run jest with ts-jest
         run: |
           time yarn test:ts-jest
